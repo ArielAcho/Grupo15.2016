@@ -1,0 +1,60 @@
+*{
+	font-family: 'Irish Grover', cursive;
+	font-size: 16px;
+}
+
+/*---------------------Home---------------------*/
+
+#logohome {
+	text-align: center;
+	margin-top: 20%;
+	margin-bottom: 20%;
+	top:50%;
+	position: static;
+}
+/*---------------------Ingresar---------------------*/
+.formulario {
+	margin-top: 10%;
+	margin-left: 33%;
+	margin-right: 33%;
+	text-align: center;
+}
+#ingresar{
+	text-align: left;
+	position: static;
+}
+#ingresar legend{
+	margin-bottom: 12%; 
+}
+#ingresar div,label{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+#recuperar{
+	text-align: center;
+	margin-top: 15%;
+}
+
+/*---------------------Registrarse---------------------*/
+#formEnvio{
+	text-align: left;
+	position: static;
+	margin-top: 20%;
+}
+#formEnvio legend{
+	margin-bottom: 5%; 
+}
+.formEnvio input,label{
+	display: inline;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 200px;
+}
+#botones input{
+	margin-top: 25px;
+	width: 50px !important;
+}
+/*---------------------Recuperar---------------------*/
+.marginparrafo{
+	margin: 0 0 35px;
+}

@@ -1,0 +1,30 @@
+{% extends 'frontendlayout.html.twig' %}
+{% block content %}
+	<section class="row-fluid">
+		<section class="col-lg-offset-3 col-lg-6">
+			<form id="formEnvio" name="sesion" class="form-horizontal" action ="ejecutarIngresar" method = "post">
+				<legend >Iniciar Sesion</legend>
+				<div class="form-group formEnvio"> <!-- Ingresa ingresa e-mail-->
+					<label class="control-label col-xs-4">Email:</label>
+		    		<div class="col-xs-8">
+		        		<input type="text" class="btn btn-default" name="email" placeholder="Email">
+		    		</div>
+				</div>
+				<div class="form-group formEnvio"> <!-- Ingresa password-->
+		    		<label class="control-label col-xs-4">Password:</label>
+		    		<div class="col-xs-8">
+		        		<input type="password" class="btn btn-default" name="clave" placeholder="Password">
+		    		</div>
+				</div>
+				<br>
+				<div class="form-group">
+		    		<div class="col-xs-offset-4 col-xs-8">
+			            <input id="enviar" name="enviar" type="submit" class="btn btn-primary" value="Enviar"> <!-- Envia el Formulario con los datos ingresados-->
+			            <input type="reset" class="btn btn-primary" value="Limpiar"> <!-- Resetea el Formulario -->
+			        </div>
+				</div>
+			</form>
+			<p><a href="olvidepass.php" class="col-xs-offset-4 col-xs-8">¿Olvidaste tu Contraseña?</a></p>
+		</section>
+	</section>
+{% endblock %}
