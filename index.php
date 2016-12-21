@@ -3,27 +3,28 @@
 	ini_set('display_errors', 1);
 	error_reporting(-1);
 
-	require_once('controller/HomeController.php');
+	require_once('controller/FrontEndController.php');
 	require_once('model/PDORepository.php');
 	require_once('model/PersonaRepository.php');
 	require_once('model/Persona.php');
+	require_once('model/SeguridadRepository.php');
 	require_once('view/TwigView.php');
-	require_once('view/Home.php');
+	require_once('view/FrontEnd.php');
 
 	if(isset($_GET["action"])&& $_GET["action"] == 'registrar'){
-		HomeController::getInstance()->registrar();
+		FrontEndController::getInstance()->registrar();
 	}
 	else if(isset($_GET["action"])&& $_GET["action"] == 'ingresar'){
-		HomeController::getInstance()->ingresar();
+		FrontEndController::getInstance()->ingresar();
 	}
 	else if(isset($_GET["action"])&& $_GET["action"] == 'ejecutarRegistrar'){
-		HomeController::getInstance()->ejecutarRegistrar($_POST);
+		FrontEndController::getInstance()->ejecutarRegistrar($_POST);
 	}
 	else if(isset($_GET["action"])&& $_GET["action"] == 'ejecutarIngresar'){
-		HomeController::getInstance()->ejecutarIngresar($_POST);
+		FrontEndController::getInstance()->ejecutarIngresar($_POST);
 	}
 	else{
-		HomeController::getInstance()->home();
+		FrontEndController::getInstance()->home();
 	}
 
 

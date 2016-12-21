@@ -22,7 +22,7 @@
 			$this->admin = $admin;
 		}
 		
-		public function getId() {
+		public function getId(){
 			return $this->id;
 		}
 		public function getNombre() {

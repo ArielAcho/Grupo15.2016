@@ -18,13 +18,19 @@
 			return $this->queryList("SELECT * FROM persona",[],$mapper);
 		}
 		public function agregar($args){
-			return $this->queryExecute("INSERT INTO persona (nombrep, apellidop, emailp, fec_nacp, passwp, premiump, baneadop, adminp)VALUES(?, ?, ?, ?, ?, ?, ?, ?)",[$args]);
+			return $this->queryExecute("INSERT INTO persona (nombrep, apellidop, emailp, fec_nacp, passwp, premiump, baneadop, adminp)VALUES(?, ?, ?, ?, ?, 0, 0, 0)",$args);
 		}
 		public function verificarUsuario($usuario,$clave){
 			$mapper = function($row){
 				return $resource = new Persona($row['idpersona'],$row['nombrep'], $row['apellidop'], $row['emailp'], $row['fec_nacp'], $row['passwp'], $row['premiump'], $row['baneadop'], $row['adminp']);
 			};
 			return $this->queryList("SELECT * FROM persona where emailp=? and passwp=?",[$usuario,$clave],$mapper);
+		}
+		public function verificarCuenta($usuario){
+			$mapper = function($row){
+				return $resource = new Persona($row['idpersona'],$row['nombrep'], $row['apellidop'], $row['emailp'], $row['fec_nacp'], $row['passwp'], $row['premiump'], $row['baneadop'], $row['adminp']);
+			};
+			return $this->queryList("SELECT * FROM persona where emailp=?",[$usuario],$mapper);
 		}
 	}
 ?>
