@@ -34,7 +34,7 @@
 		public function getEmail() {
 			return $this->email;
 		}
-		public function getFechanac() {
+		public function getFechaNac() {
 			return $this->fechanac;
 		}
 		public function getContrasenia() {

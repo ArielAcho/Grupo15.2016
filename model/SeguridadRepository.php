@@ -16,20 +16,31 @@
 			$_SESSION['usuarioNombre']= $args->getNombre();
 			$_SESSION['usuarioApellido']= $args->getApellido();
 			$_SESSION['usuarioEmail']= $args->getEmail();
-			$_SESSION['usuarioFecha']= $args->getFecha();
+			$_SESSION['usuarioFechaNac']= $args->getFechaNac();
 			$_SESSION['usuarioPremium']= $args->getPremium();
 			$_SESSION['usuarioRol']=$args->getAdmin();
 			$_SESSION['token'] = md5(uniqid(mt_rand(), true));
 			header('Location: admin.php');
 		}
 
-	    /*public function verificarLogueado(){ ####	
-			if (isset($_SESSION['usuarioID'])){
-			  return true;
+	    public function verificarLogueo(){	
+			if ( isset($_SESSION['usuarioId']) 
+				&& isset($_SESSION['usuarioNombre']) 
+				&& isset($_SESSION['usuarioApellido']) 
+				&& isset($_SESSION['usuarioEmail']) 
+				&& isset($_SESSION['usuarioFechaNac'])
+				&& isset($_SESSION['usuarioPremium'])
+				&& isset($_SESSION['usuarioRol'])){
+				return true;
 			}
 		}
 
-		public function verificarRolGestor(){
+		public function cerrarSesion(){ 
+			session_destroy();
+			header('Location: index.php');
+		}
+
+		/*public function verificarRolGestor(){
 			$usuario = $_SESSION['usuarioID'];
 			if(isset ($_SESSION['rolUsuario'])){
 				if($_SESSION['rolUsuario'] == 2){

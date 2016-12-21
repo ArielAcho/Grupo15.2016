@@ -58,3 +58,13 @@
 .marginparrafo{
 	margin: 0 0 35px;
 }
+/*---------------------Home de Publicaciones---------------------*/
+#central{
+	text-align: left;
+	position: static;
+	margin-top: 15%;
+}
+
+#busqueda{
+	top:10%;
+}

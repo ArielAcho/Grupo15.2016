@@ -10,7 +10,7 @@
 			echo self::getTwig()->render('./Frontendhome/ingresar.html.twig');
 		}
 		public function showError($str){
-			echo self::getTwig()->render('./Frontendhome/error.html.twig', array('error' => $str ));
+			echo self::getTwig()->render('error.html.twig', array('error' => $str ));
 		}
 	}
 ?>
