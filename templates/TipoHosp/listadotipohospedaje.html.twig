@@ -1,0 +1,45 @@
+{% extends 'backendlayout.html.twig' %}
+{% block content %}	
+<section class="row-fluid" id="central">
+	{%include './panel.html.twig' %}
+	
+	<div class= "col-lg-9">
+	    <div class="text-center">
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th>N°</th>
+			      <th>Tipo Hospedaje</th>
+			      <th>Estado</th>
+			      <th>Habilitar</th>
+			      <th>Deshabilitar</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    {% for i in 0.. args|length-1 %}
+			    <tr>
+			      <th scope="row">{{i+1}}</th>
+			      <td>{{args[i].nombre}}</td>
+			      <td>
+			      {% if args[i].estado == 0  %} Habilitado {% else%} Deshabilitado {% endif %}
+			      </td>
+			      <td><a href="?action=habilitarTh&id={{args[i].id}}" class="btn btn-success">Habilitar</a></td>
+			      <td><a href="?action=deshabilitarTh&id={{args[i].id}}" class="btn btn-danger">Deshabilitar</a></td>
+			    </tr>
+                {% endfor %}                
+			  </tbody>
+			</table>
+			<form class="form-horizontal" action="?action=ejecutarAgregarTh" method="POST" role="form">
+			  <div class="input-group">
+			      <input type="text" name="nombre" class="form-control" placeholder="Agregar un nuevo Tipo de Hospedaje" required>
+			      <span class="input-group-btn">
+			        <input class="btn btn-info" type="submit" value="Agregar"></button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div>
+			</form>
+		</div>
+	</div>		
+
+</section>
+{% endblock %}

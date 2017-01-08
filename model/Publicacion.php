@@ -64,5 +64,42 @@
 		public function getEstado() {
 			return $this->estado;
 		}
+
+		public function setId($args) {
+			$this->id=$args;
+		}
+		public function setImagen($args) {
+			$this->imagen=$args;
+		}
+		public function setPuntos($args) {
+			$this->puntos=$args;
+		}
+		public function setTitulo($args) {
+			$this->titulo=$args;
+		}
+		public function setDescripcion($args) {
+			$this->descripcion=$args;
+		}
+		public function setFecha($args) {
+			$this->fecha=$args;
+		}
+		public function setIdtipohosp($args) {
+			$this->idtipohosp=$args;
+		}
+		public function setIdpersona($args) {
+			$this->idpersona=$args;
+		}
+		public function setDireccion($args) {
+			$this->direccion=$args;
+		}
+		public function setRespaldo($args) {
+			$this->respaldo=$args;
+		}
+		public function setCapacidad($args) {
+			$this->capacidad=$args;
+		}
+		public function setEstado($args) {
+			$this->estado=$args;
+		}
 	}
 ?>

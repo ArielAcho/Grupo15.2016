@@ -1,0 +1,24 @@
+<!-- Menú: Las Opciones se muestran segun el Rol que cumple cada uno. -->
+<div class="col-lg-3">
+	<div class="btn-group-vertical">
+		<div class="list-group-item active">Opciones</div>
+		<a href="#" class="btn btn-default" role="button">Modificar Perfil</a>
+		<a href="#" class="btn btn-default" role="button">Cambiar Contraseña</a>
+		<a href="#" class="btn btn-default" role="button">Ver Mis Puntuaciones</a>
+		<div class="list-group-item active">Solicitudes</div>
+		<a href='#' class='btn btn-default' role='button'>Ver mis Solicitudes</a>
+		<a href='#' class='btn btn-default' role='button'>Ver Solicitudes Aceptadas</a>
+		<div class="list-group-item active">Publicaciones</div>
+		<a href='#' class='btn btn-default' role='button'>Crear Publicaciones</a>
+		{% if rol in ['1'] %}	<!-- En esta linea se Evalua con el Valor 1 para identificar si es Administrador-->
+		<div class="list-group-item active">Reportes</div>
+		<a href='?action=listadoUsuarios' class="btn btn-default" role="button">Ver Listado de Usuarios</a>
+		<a href='?action=listadoUsuariosPremium' class='btn btn-default' role='button'>Ver Listado Usuarios Premium</a>
+		<a href='?action=listadoSolicitudes' class='btn btn-default' role='button'>Ver Listado de Solicitudes</a>
+		<a href='?action=listadoTipoHospedaje' class="btn btn-default" role="button">Ver Listado de Tipos de Hospedaje</a>
+		{% endif%}
+		<div class="list-group-item active">Huespedes</div>
+		<a href='#' class='btn btn-default' role='button'>Puntuar Huespedes</a>
+		
+	</div>
+</div>

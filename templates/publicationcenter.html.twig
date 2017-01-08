@@ -1,0 +1,23 @@
+<div class= "col-lg-9">
+    <div class="panel panel-info" id="busqueda">
+		<div class="panel-heading">
+			<h3 class="panel-title text-center" >Publicaciones</h3>
+		</div>
+		<div class="panel-body">
+			{% for publ in args %}
+				<div class='row-fluid'>
+					<div class='col-lg-4'>
+						<div class='thumbnail'>
+						<a href="?action=verpublicacion&id={{publ.id}}"><img src='bs/img/{{publ.imagen}}'  style='width: 200px; height: 150px;'></a>
+						<div class='caption'>
+							<h4 ALIGN=center>{{publ.titulo}}</h4>
+							<p ALIGN=left><b>Descripcion: </b>{{publ.descripcion}}</p>
+							<p ALIGN=left><b>Fecha: </b>{{publ.fecha|date("m/d/Y")}}</p>
+							<p ALIGN=left><b>Tipo Hospedaje: </b>{{publ.idtipohosp}}</p>
+						</div>
+					</div>
+				</div>
+		    {% endfor %}					
+		</div>
+	</div>
+</div>						

@@ -1,0 +1,33 @@
+{% extends 'backendlayout.html.twig' %}
+{% block content %}	
+<section class="row-fluid" id="central">
+	{%include './panel.html.twig' %}
+	
+	<div class= "col-lg-9">
+	    <div class="text-center">
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th>N°</th>
+			      <th>Email</th>
+			      <th>Nombre</th>
+			      <th>Apellido</th>
+			      <th>Fecha de Nac.</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    {% for i in 0.. args|length-1 %}
+			    <tr>
+			      <th scope="row">{{i+1}}</th>
+			      <td>{{args[i].email}}</td>
+			      <td>{{args[i].nombre}}</td>
+			      <td>{{args[i].apellido}}</td>
+			      <td>{{args[i].fechanac|date("m/d/Y")}}</td>
+			    </tr>
+                {% endfor %}                
+			  </tbody>
+			</table>
+	    </div>
+	</div>		
+</section>
+{% endblock %}

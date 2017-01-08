@@ -32,6 +32,8 @@
 				&& isset($_SESSION['usuarioPremium'])
 				&& isset($_SESSION['usuarioRol'])){
 				return true;
+			}else{
+				return false;
 			}
 		}
 
@@ -39,7 +41,12 @@
 			session_destroy();
 			header('Location: index.php');
 		}
-
+		public function getRol(){ 
+			return $_SESSION['usuarioRol'];
+		}
+		public function getId(){ 
+			return $_SESSION['usuarioId'];
+		}
 		/*public function verificarRolGestor(){
 			$usuario = $_SESSION['usuarioID'];
 			if(isset ($_SESSION['rolUsuario'])){

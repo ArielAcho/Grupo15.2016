@@ -1,6 +1,7 @@
 {% extends 'backendlayout.html.twig' %}
-{% block content %}
-	<section class="row-fluid">
-	    <p>hola</p>
-	</section>
+{% block content %}	
+<section class="row-fluid" id="central">
+	{%include './panel.html.twig' %}
+	{%include './publicationcenter.html.twig' %}
+</section>
 {% endblock %}

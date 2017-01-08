@@ -1,21 +1,17 @@
 <?php
-	
+	session_start();
 	require_once('PDORepository.php');
+	require_once('SeguridadRepository.php');
+
 	require_once('Persona.php');
 	require_once('PersonaRepository.php');
 	require_once('Publicacion.php');
 	require_once('PublicacionRepository.php');
+	require_once('TipoHospedaje.php');
+	require_once('TipoHospedajeRepository.php');
 	
-	//$persona = PersonaRepository::getInstance()->verificarUsuario('carl.12@gmail.com','car123');
-
-	//var_dump($persona);
-
-	
+		PublicacionRepository::getInstance()->habilitarPublicaciones('1');
 
 
-	#PersonaRepository::getInstance()->agregar(['carlos','Tulp','tulp@gmail','1983-09-28','123450','0','0','0']);
-			$publicaciones = PublicacionRepository::getInstance()->listAll();
 
-var_dump($publicaciones);
-	
 ?>

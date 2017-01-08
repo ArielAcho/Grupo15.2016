@@ -1,0 +1,53 @@
+{% extends 'backendlayout.html.twig' %}
+{% block content %}	
+<section class="row-fluid" id="central">
+	{%include './panel.html.twig' %}
+	
+	<div class= "col-lg-9">
+	    <div class="text-center">
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th>N°</th>
+			      <th>Email</th>
+			      <th>Estado</th>
+			      <th>Deshabilitar</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    {% for i in 0.. uh|length-1 %}
+			    <tr>
+			      <th scope="row">{{i+1}}</th>
+			      <td>{{uh[i].email}}</td>
+			      <td>{% if uh[i].baneado == 0%} Habilitado{% endif %}</td>
+			      <td><a href="?action=deshabilitarUsuario&id={{uh[i].id}}" class="btn btn-danger">Deshabilitar</a></td>
+			    </tr>
+                {% endfor %}                
+			  </tbody>
+			</table>
+	    </div>
+	    <div class="text-center">
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th>N°</th>
+			      <th>Email</th>
+			      <th>Estado</th>
+			      <th>Habilitar</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    {% for i in 0.. ud|length-1 %}
+			    <tr>
+			      <th scope="row">{{i+1}}</th>
+			      <td>{{ud[i].email}}</td>
+			      <td>{% if ud[i].baneado == 1 %} Deshabilitado{% endif %}</td>
+			      <td><a href="?action=habilitarUsuario&id={{ud[i].id}}" class="btn btn-success">Habilitar</a></td>
+			    </tr>
+                {% endfor %}                
+			  </tbody>
+			</table>
+	    </div>
+	</div>		
+</section>
+{% endblock %}
